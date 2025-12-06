@@ -32,7 +32,7 @@ prep = AutoPrep.default()
 result = prep.run_from_uri("data.csv")
 
 result.cleaned_table.to_pandas().head()
-
+```
 ⚙️ Installation
 
 ```bash
