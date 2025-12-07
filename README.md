@@ -32,6 +32,7 @@ prep = AutoPrep.default()
 result = prep.run_from_uri("data.csv")
 
 result.cleaned_table.to_pandas().head()
+```
 
 ⚙️ Installation
 
@@ -43,11 +44,13 @@ pip install data-prep-engine
 
 ```bash
 ### pip install -e .
+pip install -e .
 ```
 
 ## 🏁 Quickstart
 
 ```bash
+```python
 from data_prep_engine import AutoPrep
 prep = AutoPrep.default()
 # Load, diagnose, clean, visualize — all in one step
@@ -59,6 +62,7 @@ result.cleaned_table.to_pandas().head()
 ## 📥 Ingestion Examples
 
 ```bash
+```python
 from data_prep_engine.ingestion import Loader
 loader = Loader()
 table_csv    = loader.load("data.csv")
@@ -71,6 +75,7 @@ All ingestion results are returned as a StandardTable, guaranteeing uniform stru
 ## 🩺 Diagnostics Examples
 
 ```bash
+```python
 from data_prep_engine.diagnostics import DataDoctor
 doctor = DataDoctor()
 report = doctor.diagnose(table)
@@ -87,6 +92,7 @@ Duplicate rows
 ## 🧼 Sanitization Examples
 
 ```bash
+```python
 from data_prep_engine.sanitization.pipeline import SanitizationPipeline
 from data_prep_engine.sanitization.steps import (
     MissingValueHandler,
@@ -106,6 +112,7 @@ print(result.logs)
 ## 🎨 Visualization Examples
 
 ```bash
+```python
 from data_prep_engine.visualization import Artist
 fig = Artist.plot(clean_table, doctor.diagnose(clean_table))
 fig.show()
@@ -117,6 +124,7 @@ Artist.to_png(fig, "preview.png")
 ### 🚀 Full AutoPrep Pipeline
 
 ```bash
+```python
 from data_prep_engine import AutoPrep
 prep = AutoPrep.default()
 result = prep.run_from_uri("data.csv")
