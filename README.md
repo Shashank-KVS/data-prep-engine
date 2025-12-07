@@ -42,7 +42,7 @@ pip install data-prep-engine
 (Coming soon to PyPI — currently install locally using:)
 
 ```bash
-### pip install -e .
+pip install -e .
 ```
 
 ## 🏁 Quickstart
