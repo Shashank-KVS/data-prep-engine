@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "data-prep-engine"
-version = "0.1.0"
+version = "0.1.1"
 description = "Unified data ingestion, diagnostics, sanitization, and visualization engine for ML workflows."
 readme = "README.md"
 requires-python = ">=3.9"
