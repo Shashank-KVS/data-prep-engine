@@ -146,6 +146,7 @@ class DataDoctor:
 
         is_constant = unique_count <= 1
         is_numeric = pd.api.types.is_numeric_dtype(series)
+        is_bool = pd.api.types.is_bool_dtype(series)
         numeric_stats: Optional[NumericStats] = None
         warnings: List[str] = []
 
@@ -165,7 +166,8 @@ class DataDoctor:
                     f"({unique_count} unique out of {non_nulls} non-null)."
                 )
 
-        if is_numeric and non_nulls > 0:
+        # Exclude boolean columns from numeric stats (they cause numpy errors)
+        if is_numeric and not is_bool and non_nulls > 0:
             numeric_stats = self._compute_numeric_stats(series)
             if numeric_stats.outlier_count > 0:
                 warnings.append(
