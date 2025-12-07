@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "data-prep-engine"
+version = "0.1.1"
+description = "Unified data ingestion, diagnostics, sanitization, and visualization engine for ML workflows."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+  { name = "Venkata Shashank Kowtharapu", email = "kaushik.koutharapu@gmail.com" }
+]
+keywords = [
+  "data-prep",
+  "eda",
+  "machine-learning",
+  "data-quality",
+  "data-visualization",
+  "auto-eda",
+]
+
+dependencies = [
+  "pandas>=1.5",
+  "numpy>=1.23",
+  "matplotlib>=3.7",
+  "pyarrow>=14.0",
+  "Pillow>=10.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Shashank-KVS/data-prep-engine"
+Source = "https://github.com/Shashank-KVS/data-prep-engine"
+Issues = "https://github.com/Shashank-KVS/data-prep-engine/issues"
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "mypy",
+  "ruff",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["data_prep_engine"]

@@ -43,11 +43,13 @@ pip install data-prep-engine
 (Coming soon to PyPI — currently install locally using:)
 
 ```bash
+### pip install -e .
 pip install -e .
 ```
 
 ## 🏁 Quickstart
 
+```bash
 ```python
 from data_prep_engine import AutoPrep
 prep = AutoPrep.default()
@@ -59,6 +61,7 @@ result.cleaned_table.to_pandas().head()
 
 ## 📥 Ingestion Examples
 
+```bash
 ```python
 from data_prep_engine.ingestion import Loader
 loader = Loader()
@@ -71,6 +74,7 @@ All ingestion results are returned as a StandardTable, guaranteeing uniform stru
 
 ## 🩺 Diagnostics Examples
 
+```bash
 ```python
 from data_prep_engine.diagnostics import DataDoctor
 doctor = DataDoctor()
@@ -87,6 +91,7 @@ Duplicate rows
 
 ## 🧼 Sanitization Examples
 
+```bash
 ```python
 from data_prep_engine.sanitization.pipeline import SanitizationPipeline
 from data_prep_engine.sanitization.steps import (
@@ -106,6 +111,7 @@ print(result.logs)
 
 ## 🎨 Visualization Examples
 
+```bash
 ```python
 from data_prep_engine.visualization import Artist
 fig = Artist.plot(clean_table, doctor.diagnose(clean_table))
@@ -117,6 +123,7 @@ Artist.to_png(fig, "preview.png")
 
 ### 🚀 Full AutoPrep Pipeline
 
+```bash
 ```python
 from data_prep_engine import AutoPrep
 prep = AutoPrep.default()
